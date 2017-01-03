@@ -1,8 +1,8 @@
 (function() {
-	var app = angular.module("myApp");
+	var app = angular.module("myApp");	/*global angular*/
 	var mainController = function($scope) {
-		$scope.novel = { /*[*/ 
-			{
+		$scope.novel = { /*[ 
+			{*/
 				sno: "1.",
 				name: "PMG",
 				status: "Completed",

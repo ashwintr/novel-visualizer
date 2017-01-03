@@ -1,5 +1,5 @@
   (function() {
-	var app = angular.module("myApp");
+	var app = angular.module("myApp");	/*global angular*/
 	var csvRead = function() {
 		return {
 			restrict: "E",

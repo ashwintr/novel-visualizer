@@ -11,7 +11,16 @@
             </tr>
         </thead>
         <tbody>
-            <!--populate the table-->
+            <tr ng-repeat = "novel">
+            <!-- <csvRead /> --> <!--populate the table-->
+                <td>{{novel.sno}}</td>
+                <td>{{novel.name}}</td>
+                <td>{{novel.status}}</td>
+                <td>{{novel.progress}}</td>
+                <td>{{novel.total}}</td>
+                <td>{{novel.rate}}</td>
+                <td>{{novel.eta}}</td>
+            </tr>
         </tbody>
     </table>
 </div>
