@@ -1,5 +1,5 @@
 (function() {
-	var app = angular.module("myApp");
+	var app = angular.module("myApp"); /*global angular*/
 	var csvRead = function($scope,$http) {
 		$http.get('/angular/sample.csv').success(function(allText) {
 			// split content based on new line
@@ -17,7 +17,7 @@
 					lines.push(tarr);
 				/*}*/
 			}
-			var data = lines;
+			$scope.data = lines;
 		});
 		return {
 			data: data

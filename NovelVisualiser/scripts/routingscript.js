@@ -6,6 +6,14 @@
   			templateUrl: "/NovelVisualiser/templates/mainpage.html",
   			controller: "mainController"
   		})
+  		.when("/responsive", {
+  			templateUrl: "/NovelVisualiser/templates/responsive.html",
+  			controller: "responsiveController"
+  		})
+  		.when("/addNovels", {
+  		  templateUrl: "/NovelVisualiser/templates/addNovels.html",
+  		  controller: "addNovelsController"
+  		})
   		.otherwise({redirectTo: "/mainPage"});
   });
 }());
