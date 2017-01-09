@@ -9,7 +9,7 @@
 			});
 		};
 		var csvRead = function() {
-			$http.get('/NovelVisualiser/data/novels.csv').success(function(allText) {
+			$http.get('/novel-visualizer/NovelVisualiser/data/novels.csv').success(function(allText) {
 				// split content based on new line
 				var allTextLines = allText.split(/\r\n|\n/);
 				/*var headers = allTextLines[0].split(',');*/
