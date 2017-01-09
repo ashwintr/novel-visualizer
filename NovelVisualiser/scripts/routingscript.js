@@ -3,15 +3,15 @@
     app.config(function($routeProvider) {
   	  $routeProvider
   		.when("/mainPage", {
-  			templateUrl: "/NovelVisualiser/templates/mainpage.html",
+  			templateUrl: "/novel-visualizer/NovelVisualiser/templates/mainpage.html",
   			controller: "mainController"
   		})
   		.when("/responsive", {
-  			templateUrl: "/NovelVisualiser/templates/responsive.html",
+  			templateUrl: "/novel-visualizer/NovelVisualiser/templates/responsive.html",
   			controller: "responsiveController"
   		})
   		.when("/addNovels", {
-  		  templateUrl: "/NovelVisualiser/templates/addNovels.html",
+  		  templateUrl: "/novel-visualizer/NovelVisualiser/templates/addNovels.html",
   		  controller: "addNovelsController"
   		})
   		.otherwise({redirectTo: "/mainPage"});
