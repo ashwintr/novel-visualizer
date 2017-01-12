@@ -1,1 +1,2 @@
-To visualise the novels that i read
+# novel-visualizer
+To visualize the progress of webnovels that i read
