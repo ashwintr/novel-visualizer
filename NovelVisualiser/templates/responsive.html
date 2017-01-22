@@ -11,6 +11,7 @@
 					{{key}}
 				</th>
 			</tr>-->
+			<tr><select type="text" ng-model="rate" ng-options="item for item in rates" ng-change="updateRate()"/></select></tr>
 			<tr>
                 <td>S.No</td>
                 <td>Title</td>      <!--link to the novel page(novelupdates/lnmtl)-->
@@ -19,11 +20,9 @@
                 <td>Total</td>       <!--number of novels per day(must be able to change and see the difference in ETA)-->
                 <td>Progress</td>        <!--in days(could be changed to months)-->
                 <td>ETA</td>
-                <td>Rate</td>
             </tr>
     		<tr ng-repeat="x in data">
      			<td ng-repeat="y in x">{{ y }}</td>
-     			<td><select type="text" ng-model="rate" ng-options="item for item in rates" ng-change="updateRate()"/></select></td>
     		</tr>
   		</table>
 	</div>

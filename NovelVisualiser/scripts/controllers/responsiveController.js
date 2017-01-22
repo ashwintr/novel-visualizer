@@ -1,15 +1,15 @@
 (function() {
 	var app = angular.module("myApp");	/*global angular*/
 	var responsiveController = function($scope, $http) {
-		/*$scope.rate = 1;*/
+		$scope.rate = 1;
 		$scope.updateRate = function() {
-			$scope.rate = this.rate;
 			angular.forEach($scope.data,(value,key) => {
-				value.eta=(value.total-value.read)/this.rate;
+				value.eta=Math.round((value.total-value.read)/$scope.rate);
 			});
 		};
 		var csvRead = function() {
-			$http.get('/novel-visualizer/NovelVisualiser/data/novels.csv').success(function(allText) {
+			/*$http.get('/novel-visualizer/NovelVisualiser/data/novels.csv').success(function(allText) {*/
+			$http.get('/novel-visualizer/NovelVisualiser/data/novels.csv').success(function(allText) {	
 				// split content based on new line
 				var allTextLines = allText.split(/\r\n|\n/);
 				/*var headers = allTextLines[0].split(',');*/
@@ -24,16 +24,14 @@
 					for ( var j = 0; j < data.length; j++) {
 						tarr[columns[j]]=data[j];
 					}
-					tarr.progress = (tarr.read/tarr.total)*100;
+					tarr.progress = Math.round((tarr.read/tarr.total)*100) + "%";
 					lines.push(tarr);
 					/*tarr.rate =  ["1", "2", "3", "5"];*/
-					tarr.eta = (tarr.total-tarr.read)/tarr.rate;
-					console.log($scope.rate);
+					//tarr.eta = (tarr.total-tarr.read)/tarr.rate;
 					/*}*/
 				}
 				$scope.data = lines;
 				$scope.rates = ["1", "2", "3", "5"];
-				console.log($scope.data);
 			});
 		};
 		csvRead();
