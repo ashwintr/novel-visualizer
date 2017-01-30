@@ -17,6 +17,11 @@
         /*templateUrl: "/NovelVisualiser/templates/addNovels.html",*/
   		  controller: "addNovelsController"
   		})
+      .when("/novellist", {
+        templateUrl: "/novel-visualizer/NovelVisualiser/templates/novellist.html",
+        /*templateUrl: "/NovelVisualiser/templates/novellist.html",*/
+        controller: "novellistController"
+      })
   		.otherwise({redirectTo: "/responsive"});
   });
 }());
