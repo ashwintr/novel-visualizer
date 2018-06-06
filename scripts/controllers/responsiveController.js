@@ -8,7 +8,6 @@
 			});
 		};
 		var csvRead = function() {
-			/*$http.get('/novel-visualizer/NovelVisualiser/data/novels.csv').success(function(allText) {*/
 			$http.get('/data/novels.csv').success(function(allText) {	
 				// split content based on new line
 				var allTextLines = allText.split(/\r\n|\n/);
