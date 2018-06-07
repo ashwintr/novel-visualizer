@@ -18,7 +18,7 @@
 					var data = allTextLines[i].split(',');
 					/*if (data.length == headers.length) {*/
 					var tarr = [];
-					var columns = ["id","title","status","read","total"];
+					var columns = ["title","status","read","total","novelPage"];
 					var tarr = {};
 					for ( var j = 0; j < data.length; j++) {
 						tarr[columns[j]]=data[j];

@@ -2,10 +2,6 @@
   var app = angular.module("myApp",["ngRoute"]);     /*global angular*/
     app.config(function($routeProvider) {
   	  $routeProvider
-  		.when("/mainPage", {
-  			templateUrl: "/templates/mainpage.html",
-  			controller: "mainController"
-  		})
   		.when("/responsive", {
   			templateUrl: "/templates/responsive.html",
   			controller: "responsiveController"
