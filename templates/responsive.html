@@ -1,0 +1,38 @@
+<div>
+	<div>
+		<!-- csv contents -->
+		<!-- <csvRead/> NOT NEEDED--> 
+		<table class="table">
+			<!-- <tr>
+				<th ng-repeat="(key, value) in data[0]">
+					{{key}}
+				</th>
+			</tr> -->
+			<caption><h4>Progress of Machine Translated Novels at a Glance</h4></caption>
+			<tr>
+                <!--<th>S.No</th>-->
+                <th>Title</th>      <!--link to the novel page(novelupdates/lnmtl)-->
+				<th>Status</th>     <!--completed or in-progress-->
+				<th>Total</th>    <!--number of novels per day(must be able to change and see the difference in ETA)-->
+                <th>Read</th>   <!--Progress bar-->
+                <th>Unread</th>       
+                <th>Progress</th>        <!--in days(could be changed to months)-->
+            </tr>
+    		<tr ng-repeat="x in data">
+				<!-- <td ng-repeat="y in x">{{ y }}</td> -->
+				<!--<td>{{ x.id }}</td>-->
+				<td> <a href="{{ x.novelPage }}"> {{ x.title }} </a> </td>
+				<td>{{ x.status }}</td>
+				<td>{{ x.total | number : 0}}</td>
+				<td>{{ x.read | number : 0}}</td>
+				<td>{{ x.total - x.read | number : 0}}</td>
+				<td> 
+					<div class="progress" style="margin-bottom:0px;">
+						<div class="progress-bar" role="progressbar" aria-valuenow="{{ x.progress }}" aria-valuemin="0" aria-valuemax="100" style=" width : {{ x.progress }}">{{ x.progress }}
+						</div>
+					</div>
+				</td>
+    		</tr>
+		</table>
+	</div>
+</div>

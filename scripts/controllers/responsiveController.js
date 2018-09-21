@@ -8,8 +8,7 @@
 			});
 		};
 		var csvRead = function() {
-			/*$http.get('/novel-visualizer/NovelVisualiser/data/novels.csv').success(function(allText) {*/
-			$http.get('/novel-visualizer/NovelVisualiser/data/novels.csv').success(function(allText) {	
+			$http.get('/data/novels.csv').success(function(allText) {	
 				// split content based on new line
 				var allTextLines = allText.split(/\r\n|\n/);
 				/*var headers = allTextLines[0].split(',');*/
@@ -19,7 +18,7 @@
 					var data = allTextLines[i].split(',');
 					/*if (data.length == headers.length) {*/
 					var tarr = [];
-					var columns = ["id","title","status","read","total"];
+					var columns = ["title","status","read","total","novelPage"];
 					var tarr = {};
 					for ( var j = 0; j < data.length; j++) {
 						tarr[columns[j]]=data[j];
